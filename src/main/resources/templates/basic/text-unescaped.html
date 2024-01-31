@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<h1>text vs utext</h1>
+<ul>
+  <li>th:text = <span th:text="${data}"></span></li>
+  <li>th:utext = <span th:utext="${data}"></span></li>
+
+</ul>
+
+<!--
+  th:inline="none"
+  타임리프가 [[...]] 등의 수식을 해석하지 말라는 옵션
+  즉, 해당 수식을 문자 그대로 표현해서 랜더링 하라는 의미이다.
+ -->
+<h1><span th:inline="none">[[...]] vs [(...)]</span></h1>
+<ul>
+  <li><span th:inline="none">[[...]]</span>[[${data}]]</li>
+  <li><span th:inline="none">[(...)]</span>[(${data})]</li>
+</ul>
+
+</body>
+</html>
